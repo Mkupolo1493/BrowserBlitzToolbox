@@ -1,0 +1,13 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+span.zero {
+    /* fun fact: the lightness order of the grays in HTML/CSS is:
+        lightgray -> darkgray -> gray -> dimgray
+    yep, "dark gray" is the second lightest 💀 */
+    color: dimgray;
+}
+#decdump.hidden {
+    display: none;
+}
