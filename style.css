@@ -8,6 +8,19 @@ span.zero {
     yep, "dark gray" is the second lightest 💀 */
     color: dimgray;
 }
-#decdump.hidden {
+.hidden {
     display: none;
+}
+.decoded-table {
+    border-collapse: collapse;
+}
+.decoded-table td {
+    border: 5px solid black;
+}
+
+span.bool-true {
+    color: green;
+}
+span.bool.false {
+    color: red;
 }
