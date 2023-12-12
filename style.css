@@ -21,6 +21,10 @@ span.zero {
 span.bool-true {
     color: green;
 }
-span.bool.false {
+span.bool-false {
     color: red;
+}
+
+.tank-6 {
+    filter: hue-rotate(98.3deg) saturate(42.3%) brightness(53.7%);
 }

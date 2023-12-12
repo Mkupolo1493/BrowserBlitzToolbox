@@ -51,12 +51,12 @@ binFileInput.addEventListener("change", function(e) {
             
             currentCell.innerHTML += "<br>1P tank spawns:";
             for (let j = 1; j <= 8; j++) {
-                currentCell.innerHTML += `<br>${j}. ${getInt(dec, i + j + 1)}`;
+                currentCell.innerHTML += `<br>${j}. ${getTanks(dec, i + j + 1)}`;
             }
             
             currentCell.innerHTML += "<br>2P tank spawns:";
             for (let j = 1; j <= 8; j++) {
-                currentCell.innerHTML += `<br>${j}. ${getInt(dec, i + j + 9)}`;
+                currentCell.innerHTML += `<br>${j}. ${getTanks(dec, i + j + 9)}`;
             }
             
             currentCell.innerHTML += "<br>1P map: ";
