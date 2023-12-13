@@ -44,19 +44,16 @@ binFileInput.addEventListener("change", function(e) {
             }
             currentCell = document.createElement("td");
             currentRow.appendChild(currentCell);
+
+            const missionN = (i - 399) / 22;
             
-            currentCell.innerHTML = "Bonus tank for completion?" + (getInt(dec, i) ? ' <span class="bool-true">Yes</span>' : ' <span class="bool-false">No</span>');
+            currentCell.innerHTML = `<h2>Mission ${missionN}:</h2>${(missionN <= 20) ? "<h3>Singleplayer</h3>" : ''}`;
             
-            currentCell.innerHTML += "<br>2P mode: Bonus tank for completion?" + (getInt(dec, i + 1) ? ' <span class="bool-true">Yes</span>' : ' <span class="bool-false">No</span>');
+            currentCell.innerHTML += "Bonus tank for completion?" + (getInt(dec, i) ? ' <span class="bool-true">Yes</span>' : ' <span class="bool-false">No</span>');
             
             currentCell.innerHTML += "<br>1P tank spawns:";
             for (let j = 1; j <= 8; j++) {
                 currentCell.innerHTML += `<br>${j}. ${getTanks(dec, i + j + 1)}`;
-            }
-            
-            currentCell.innerHTML += "<br>2P tank spawns:";
-            for (let j = 1; j <= 8; j++) {
-                currentCell.innerHTML += `<br>${j}. ${getTanks(dec, i + j + 9)}`;
             }
             
             currentCell.innerHTML += "<br>1P map: ";
@@ -68,15 +65,25 @@ binFileInput.addEventListener("change", function(e) {
             else {
                 currentCell.innerHTML += `Random ${mapL} - ${mapR}`;
             }
-            
-            currentCell.innerHTML += "<br>2P map: ";
-            mapL = getInt(dec, i + 18);
-            mapR = getInt(dec, i + 19);
-            if (mapL === mapR) {
-                currentCell.innerHTML += mapL;
-            }
-            else {
-                currentCell.innerHTML += `Random ${mapL} - ${mapR}`;
+
+            if (missionN <= 20) {
+                currentCell.innerHTML += "<h3>Two-player</h3>";
+                currentCell.innerHTML += "2P mode: Bonus tank for completion?" + (getInt(dec, i + 1) ? ' <span class="bool-true">Yes</span>' : ' <span class="bool-false">No</span>');
+    
+                currentCell.innerHTML += "<br>2P tank spawns:";
+                for (let j = 1; j <= 8; j++) {
+                    currentCell.innerHTML += `<br>${j}. ${getTanks(dec, i + j + 9)}`;
+                }
+                
+                currentCell.innerHTML += "<br>2P map: ";
+                mapL = getInt(dec, i + 18);
+                mapR = getInt(dec, i + 19);
+                if (mapL === mapR) {
+                    currentCell.innerHTML += mapL;
+                }
+                else {
+                    currentCell.innerHTML += `Random ${mapL} - ${mapR}`;
+                }
             }
         }
         missionTable.classList.remove("hidden");
