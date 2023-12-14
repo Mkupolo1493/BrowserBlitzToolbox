@@ -1,6 +1,8 @@
-html {
-  height: 100%;
-  width: 100%;
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    line-height: 1.2;
 }
 span.zero {
     /* fun fact: the lightness order of the grays in HTML/CSS is:
@@ -16,6 +18,8 @@ span.zero {
 }
 .decoded-table td {
     border: 5px solid black;
+    vertical-align: top; /* to align the top row with taller missions
+    it doesn't seem to do anything yet but just in case */
 }
 
 span.bool-true {
@@ -26,6 +30,9 @@ span.bool-false {
 }
 
 .tank-icon {
-    height: 1em;
-    filter: saturate(1.23456789);
+    height: 1.2em; /* to match with line height */
+    vertical-align: top; /* otherwise it hovers above the text and looks wrong */
+    filter: saturate(1.337);
+    image-rendering: /*pixelated*/crisp-edges; /* pixelated makes it look crippled :/
+    yeah there's a difference between crisp-edges and pixelated now */
 }
