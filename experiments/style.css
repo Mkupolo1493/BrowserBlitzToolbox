@@ -1,0 +1,15 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    line-height: 1.2;
+}
+span.zero {
+    /* fun fact: the lightness order of the grays in HTML/CSS is:
+        lightgray -> darkgray -> gray -> dimgray
+    yep, "dark gray" is the second lightest 💀 */
+    color: dimgray;
+}
+.hidden {
+    display: none;
+}
